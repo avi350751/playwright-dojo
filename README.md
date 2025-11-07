@@ -1,0 +1,3 @@
+End-to-end Playwright test orchestrator for UI, API, and regression workflows.
+This is a journey to master Playwright with JS and TS.
+Let's start...
