@@ -14,6 +14,10 @@ test('uibasics example test', async ({browser}) =>{
     console.log(msg);
     expect(msg).toContain('Invalid login attempt.');
 
+    await page.locator("#Password").fill("");
+    await page.locator("#Password").fill("password");
+    await page.locator("#loginIn").click();
+
 });
 
 test('uibasics example second test', async ({page}) =>{
