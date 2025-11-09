@@ -33,11 +33,10 @@ test('test2 - Locators which extract multiple webelements', async ({page})=>{
     console.log(msg);
     expect(msg).toContain("Automation");
 
-    const cardTitles = await page.locator(".card-body b");
-    const txt = await cardTitles.first().textContent();
-    console.log(txt);
-    expect(txt).toContain("ZARA COAT 3");
+    //await page.waitForLoadState('networkidle'); //considered as flaky approach
+    await page.locator('.card-body b').first().waitFor(); //better approach
 
+    const cardTitles = await page.locator(".card-body b");
     const allTitles = await cardTitles.allTextContents();
     console.log(allTitles);
     expect(allTitles.length).toBe(3);
